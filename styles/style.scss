@@ -106,25 +106,29 @@ body {
 
             .card-cta__share-on {
                 position: relative;
-                padding-left: .75em;
+                padding-left: .55em;
 
-                & img {
+                & i {
                     background-color: $Light-Grayish-Blue;
+                    color: $Desaturated-Dark-Blue;
                     border-radius: 100%;
-                    scale: 0.75;
                     cursor: pointer;
-                    padding: .55em;
+                    font-size: 1.5em;
+                    padding: .25em;
                     object-fit: contain;
+                    transition: all 200ms ease-in;
+                }
+                & i:hover {
+                    color: $Light-Grayish-Blue;
+                    background-color: $Very-Dark-Grayish-Blue;
                 }
             }
             .card-cta {
                 @include flex;
                 position: absolute;
-                right: 6px;
-                border-radius: 4px;
+                right: 5.5px;
                 box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-                top: 29em;
-                display: none;
+                top: 28.5em;
 
                 & span {
                     text-transform: uppercase;
@@ -134,12 +138,21 @@ body {
                 }
                 .card-cta__icons {
                     @include flex;
-
+                    background-color: $Very-Dark-Grayish-Blue;
+                    border-radius: 4px;
+                    display: none;
+                    
                     & img {   
                         object-fit: contain;
                         width: 35px;
                         height: 35px;
                         padding-inline: .45em;
+                        cursor: pointer;
+                        transition: all 200ms ease-in;
+                    }
+
+                    & img:hover {
+                        transform: translateY(-2px);
                     }
                 }
 
@@ -163,7 +176,7 @@ body {
         .card {
             .card-footer {
                 .card-footer__avatar {
-                    gap: 1em;
+                    gap: 1.5em;
                 }
             }
         }
@@ -217,11 +230,14 @@ body {
                     position: absolute;
                     right: 35px;
                     top: 11em;
-                    display: none;
                 }
 
                 .card-footer__avatar {
                     gap: 4em;
+
+                    .card-cta__share-on {
+                        padding-left: 1em;
+                    }
                 }
             }
         }
